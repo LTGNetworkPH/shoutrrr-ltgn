@@ -1,0 +1,29 @@
+app = "ltgn-shoutrrr"
+primary_region = "sin"
+
+[build]
+  image = "ghcr.io/coollabsio/shoutrrr:latest"
+
+[env]
+  APP_URL = "https://ltgn-shoutrrr.fly.dev"
+  APP_ENV = "production"
+  APP_DEBUG = "false"
+  SESSION_SECURE_COOKIE = "true"
+  TRUSTED_PROXIES = "*"
+  OCTANE_HTTPS = "true"
+  TZ = "Asia/Manila"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = "off"
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[mounts]]
+  source = "shoutrrr_sqlite"
+  destination = "/var/www/html/database/sqlite"
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "1gb"

@@ -1,6 +1,8 @@
 app = "ltgn-shoutrrr"
 primary_region = "sin"
 
+swap_size_mb = 512
+
 [build]
   image = "ghcr.io/coollabsio/shoutrrr:latest"
 
@@ -26,4 +28,4 @@ primary_region = "sin"
 
 [[vm]]
   size = "shared-cpu-1x"
-  memory = "1gb"
+  memory = "512mb"
